@@ -1,0 +1,17 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build EXE
+        run: pyinstaller -w --name calculator --icon=icon.ico  main.py --onefile
+
+      - uses: actions/upload-artifact@main
+        with:
+          name: calculator.exe
+          path: dist/calculator.exe
