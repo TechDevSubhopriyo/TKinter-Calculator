@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: checkout repo content
         uses: actions/checkout@v2
@@ -30,4 +30,4 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: calculator.exe
-          path: dist/calculator.exe
+          path: dist
